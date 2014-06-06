@@ -1,0 +1,14 @@
+
+<%= link_to 'New Idea', new_idea_path %>
+
+<% @ideas.each do |idea| %>
+
+  <h3><%= idea.name.html_safe %></h3>
+  <p><%= idea.description.html_safe %></p>
+  <%= link_to "Edit Idea", edit_idea_path(idea) %>
+  <% if idea != @ideas.last %>
+    <hr />
+  <% end %>
+<% end %>
+
+
